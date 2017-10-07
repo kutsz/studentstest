@@ -260,4 +260,25 @@ class StudentController {
 
 	}
 
+	public function actionInserttotable() {
+
+		$i = 10;
+		while ($i < 200) {
+
+			$name = 'Student' . $i;
+			$surname = 'Surname' . $i;
+			$gender = $i % 2 ? 'female' : 'male';
+			$numberOfGroup = 'gr' . $i;
+			$email = 'email' . $i . '@gmail.com';
+			$pointsOfVNO = rand(70, 198);
+			$yearOfBirth = rand(1980, 2001);
+			$location = $i % 2 ? 'local' : 'nonresident';
+
+			Student::addStudent($name, $surname, $gender, $numberOfGroup, $email, $pointsOfVNO,
+				$yearOfBirth, $location);
+			$i++;
+		}
+
+	}
+
 }

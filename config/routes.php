@@ -6,5 +6,6 @@ return [
 	'registration' => 'student/registration',
 	'search' => 'student/search',
 	'main' => 'student/main',
+	'inserttotable' => 'student/inserttotable',
 
 ];

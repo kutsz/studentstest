@@ -2,7 +2,7 @@
 
 class Student {
 
-	const SHOW_BY_DEFAULT = 10;
+	const SHOW_BY_DEFAULT = 50;
 
 	public static function checkNamelength($name) {
 		if (mb_strlen($name) >= 200) {
