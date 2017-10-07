@@ -20,7 +20,7 @@
 	<?php endif;?>
 
 
-	<?php if (isset($_COOKIE)): ?>
+	<?php if (isset($_COOKIE) && isset($_COOKIE['pointsOfVNO']) && isset($_COOKIE['name'])): ?>
 
 		<div id = 'ok'>
 			Cпасибо, данные сохранены,вы можете их отредактировать или просмотреть список абитуриентов.
@@ -62,7 +62,7 @@
 
 			<p>
 				Year of birth<br>
-				<input type="text" name="yearOfBirth1" value="<?php echo $_COOKIE['yearOfBirth']; ?>">
+				<input type="text" name="yearOfBirth1" value="<?php echo  ; ?>">
 			</p>
 
 			<p>
