@@ -23,10 +23,7 @@ class StudentController {
 			$location = (isset($_POST['location'])) ? $_POST['location'] : '';
 
 			$errors = false;
-			//$is_student = false;
 			$is_email = false;
-			//$ok = null;
-			//$student = [];
 
 			if (empty($name)) {
 				$errors[] = 'Введите имя';
@@ -103,7 +100,11 @@ class StudentController {
 				if ($flag) {
 					$student = Student::getStudentByEmail($email);
 					$id = $student['id'];
-					$ok = true;
+					setcookie(
+						"id",
+						$id,
+						time() + (10 * 365 * 24 * 60 * 60)
+					);
 					setcookie(
 						"name",
 						$name,
@@ -115,8 +116,33 @@ class StudentController {
 						time() + (10 * 365 * 24 * 60 * 60)
 					);
 					setcookie(
+						"gender",
+						$gender,
+						time() + (10 * 365 * 24 * 60 * 60)
+					);
+					setcookie(
+						"numberOfGroup",
+						$numberOfGroup,
+						time() + (10 * 365 * 24 * 60 * 60)
+					);
+					setcookie(
 						"email",
 						$email,
+						time() + (10 * 365 * 24 * 60 * 60)
+					);
+					setcookie(
+						"pointsOfVNO",
+						$pointsOfVNO,
+						time() + (10 * 365 * 24 * 60 * 60)
+					);
+					setcookie(
+						"yearOfBirth",
+						$yearOfBirth,
+						time() + (10 * 365 * 24 * 60 * 60)
+					);
+					setcookie(
+						"location",
+						$location,
 						time() + (10 * 365 * 24 * 60 * 60)
 					);
 				}
@@ -220,6 +246,51 @@ class StudentController {
 				Student::update($id, $name,
 					$surname, $gender, $numberOfGroup, $email, $pointsOfVNO, $yearOfBirth, $location);
 
+				setcookie(
+					"id",
+					$id,
+					time() + (10 * 365 * 24 * 60 * 60)
+				);
+				setcookie(
+					"name",
+					$name,
+					time() + (10 * 365 * 24 * 60 * 60)
+				);
+				setcookie(
+					"surname",
+					$surname,
+					time() + (10 * 365 * 24 * 60 * 60)
+				);
+				setcookie(
+					"gender",
+					$gender,
+					time() + (10 * 365 * 24 * 60 * 60)
+				);
+				setcookie(
+					"numberOfGroup",
+					$numberOfGroup,
+					time() + (10 * 365 * 24 * 60 * 60)
+				);
+				setcookie(
+					"email",
+					$email,
+					time() + (10 * 365 * 24 * 60 * 60)
+				);
+				setcookie(
+					"pointsOfVNO",
+					$pointsOfVNO,
+					time() + (10 * 365 * 24 * 60 * 60)
+				);
+				setcookie(
+					"yearOfBirth",
+					$yearOfBirth,
+					time() + (10 * 365 * 24 * 60 * 60)
+				);
+				setcookie(
+					"location",
+					$location,
+					time() + (10 * 365 * 24 * 60 * 60)
+				);
 			}
 
 		}
