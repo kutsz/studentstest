@@ -4,6 +4,8 @@
 	<meta charset="utf-8">
 	<title>Main</title>
 	<link href="/template/css/style.css" rel="stylesheet">
+	<script src="/template/js/jquery-3.2.1.min.js"></script>
+	<script src="/template/js/jquery.tablesorter.min.js"></script>
 </head>
 <body>
 
@@ -18,41 +20,50 @@
 
 	<?php if (!empty($students) && is_array($students)): ?>
 
-		<table>
-
-			<tr>
-				<th>
-					<center> <?php echo 'Имя'; ?></center>
-				</th>
-				<th>
-					<center> <?php echo 'Фамилия'; ?></center>
-				</th>
-				<th>
-					<center> <?php echo 'Номер группы '; ?></center>
-				</th>
-				<th>
-					<center> <?php echo 'Кол-во баллов'; ?></center>
-				</th>
-			</tr>
-
-			<?php foreach ($students as $student): ?>
+		<table id="myTable">
+			<thead>
 				<tr>
-					<td> <?php echo $student['name']; ?></td>
-					<td> <?php echo $student['surname']; ?></td>
-					<td> <?php echo $student['numberOfGroup']; ?></td>
-					<td> <?php echo $student['pointsOfVNO']; ?></td>
-
+					<th>
+						<center> <?php echo 'Имя'; ?></center>
+					</th>
+					<th>
+						<center> <?php echo 'Фамилия'; ?></center>
+					</th>
+					<th>
+						<center> <?php echo 'Номер группы '; ?></center>
+					</th>
+					<th>
+						<center> <?php echo 'Кол-во баллов'; ?></center>
+					</th>
 				</tr>
-			<?php endforeach;?>
+			</thead>
+			<tbody>
+				<?php foreach ($students as $student): ?>
+					<tr>
+						<td> <?php echo $student['name']; ?></td>
+						<td> <?php echo $student['surname']; ?></td>
+						<td> <?php echo $student['numberOfGroup']; ?></td>
+						<td> <?php echo $student['pointsOfVNO']; ?></td>
 
-		</table> <br>
+					</tr>
+				<?php endforeach;?>
+				<tbody>
+				</table> <br>
 
-	<?php endif;?>
+			<?php endif;?>
 
-	<?php echo $pagination->get(); ?><br><br><br>
+			<?php echo $pagination->get(); ?><br><br><br>
 
-	<a href="/registration">Регистрация</a><br>
+			<a href="/registration">Регистрация</a><br>
 
+
+	<script>
+				$(document).ready(function(){
+
+					$("#myTable").tablesorter();
+				});
+
+	</script>
 </body>
 
 </html>
