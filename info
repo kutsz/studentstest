@@ -1,0 +1,15 @@
+
+sudo cp /etc/apache2/sites-available/000-default.conf /etc/apache2/sites-available/studentstest.com.conf
+
+sudo ln -s /etc/apache2/sites-available/studentstest.com.conf /etc/apache2/sites-enabled
+
+ 
+_______________file      /etc/hosts____________
+
+127.0.0.1	localhost
+127.0.1.1	pc
+127.0.1.1	otakoitest.com
+127.0.1.1	studentstest.com
+...
+_______________________________________________
+
