@@ -326,7 +326,8 @@ class StudentController {
 
 		}
 
-		require_once ROOT . '/views/students/search.php';
+		// require_once ROOT . '/views/students/search.php';
+		require_once ROOT . '/views/students/main.php';
 		return true;
 
 	}

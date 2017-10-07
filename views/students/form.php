@@ -62,7 +62,7 @@
 
 			<p>
 				Year of birth<br>
-				<input type="text" name="yearOfBirth1" value="<?php echo  ; ?>">
+				<input type="text" name="yearOfBirth1" value="<?php echo $_COOKIE['yearOfBirth']; ?>">
 			</p>
 
 			<p>

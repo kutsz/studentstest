@@ -52,18 +52,26 @@
 
 			<?php endif;?>
 
-			<?php echo $pagination->get(); ?><br><br><br>
+			<?php if (isset($_POST['search'])): ?>
 
-			<a href="/registration">Регистрация</a><br>
+				<a href="/main">list of students</a><br>
 
+			<?php else: ?>
 
-	<script>
+				<?php echo $pagination->get(); ?><br><br><br>
+
+				<a href="/registration">Регистрация</a><br>
+
+			<?php endif;?>
+
+			<script>
 				$(document).ready(function(){
 
 					$("#myTable").tablesorter();
 				});
 
-	</script>
-</body>
+			</script>
 
-</html>
+		</body>
+
+		</html>
